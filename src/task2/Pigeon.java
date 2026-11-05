@@ -1,6 +1,6 @@
 package task2;
 
-public class Pigeon extends Bird {
+public class Pigeon extends Bird implements AnimalBehavior {
     private String species;
 
     public Pigeon() {
@@ -28,6 +28,16 @@ public class Pigeon extends Bird {
 
     public void carryMessage() {
         System.out.println(getName() + " carries a message back to the loft.");
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println(getName() + " the pigeon tucks its head under a wing and sleeps.");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Pigeon fly");
     }
 
     public String getSpecies() {

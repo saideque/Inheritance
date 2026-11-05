@@ -1,6 +1,6 @@
 package task2;
 
-public class Blowfish extends Fish {
+public class Blowfish extends Fish implements AnimalBehavior {
     private boolean poisonous;
 
     public Blowfish() {
@@ -29,6 +29,16 @@ public class Blowfish extends Fish {
     public void inflate() {
         System.out.println(getName() + " inflates into a spiky ball"
                 + (poisonous ? " full of toxins!" : "."));
+    }
+
+    @Override
+    public void sleep() {
+        System.out.println(getName() + " the blowfish rests motionless near the reef and sleeps.");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Blowfish swim");
     }
 
     public boolean isPoisonous() {

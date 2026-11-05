@@ -47,5 +47,30 @@ public class Main {
             }
             System.out.println();
         }
+
+        // ---- Interface 2: AnimalMove (default method, overridden in leaf classes) ----
+        System.out.println("=== AnimalMove: move() on each Animal ===");
+        for (Animal animal : animals) {
+            animal.move();
+        }
+        System.out.println();
+
+        // ---- Interface 3: AnimalName (static method called on the interface) ----
+        System.out.println("=== AnimalName: name() on each Animal ===");
+        for (Animal animal : animals) {
+            AnimalName.name(animal.getName());
+        }
+        System.out.println();
+
+        // ---- Interface 1: AnimalBehavior (array of interface references) ----
+        System.out.println("=== AnimalBehavior: sleep() on selected indexes ===");
+        AnimalBehavior[] behaviors = new AnimalBehavior[3];
+        behaviors[0] = new Dog("Rex", 3, 25.5, 4, "German Shepherd");
+        behaviors[1] = new Pigeon("Pidgey", 2, 0.4, "white", "homing pigeon");
+        behaviors[2] = new Blowfish("Spike", 1, 1.2, true, true);
+
+        behaviors[0].sleep();
+        behaviors[1].sleep();
+        behaviors[2].sleep();
     }
 }
